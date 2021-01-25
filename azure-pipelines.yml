@@ -66,7 +66,7 @@ stages:
             curl -sSO https://downloads.veracode.com/securityscan/pipeline-scan-LATEST.zip
             unzip pipeline-scan-LATEST.zip
             echo '[INFO] --- Starting Pipeline Scan execution...'
-            java -Dpipeline.debug=true -jar pipeline-scan.jar -vid $(VID) -vkey $(VKEY) --file target/verademo.war --project_name $(System.TeamProject) --project_url $(Build.BuildUri) -so true --issue_details true
+            java -Dpipeline.debug=true -jar pipeline-scan.jar -vid $(VID) -vkey $(VKEY) --file target/verademo.war --project_name $(System.TeamProject) --project_url $(Build.BuildUri) -so true
             STATUS=${?}            
             if [ $STATUS -gt 0 ];
             then
